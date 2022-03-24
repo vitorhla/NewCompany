@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -46,14 +48,75 @@ public class CompanyService {
 		entity.setEstado(dto.getEstado());
 		
 		entity = repository.save(entity);
-		
 		return new  CompanyDTO(entity);
-		
-		
-		
+			
 	}
 	
 	
+	@Transactional
+	public CompanyDTO updateCompany(Long id, CompanyDTO dto) {
+		
+		try {
+		@SuppressWarnings("deprecation")
+		Company entity = repository.getOne(id);
+		
+		
+		 String razaoSocialEditing = "";
+		 String nomeFantasiaEditing = "";
+		 String cnpjEditing = "";
+		 String enderecoEditing = "";
+		 String numeroEditing = "";
+		 String cidadeEditing = "";
+		 String estadoEditing = "";
+		 
+		 razaoSocialEditing = dto.getRazaoSocial();
+		 if(!razaoSocialEditing.equals("")) {
+			 entity.setRazaoSocial(razaoSocialEditing);
+		 }
+		 
+		 nomeFantasiaEditing = dto.getNomeFantasia();
+		 if(!nomeFantasiaEditing.equals("")) {
+			 entity.setNomeFantasia(nomeFantasiaEditing);
+		 }
+		 
+		 cnpjEditing = dto.getCnpj();
+		 if(!cnpjEditing.equals("")) {
+			 entity.setCnpj(cnpjEditing); 
+		 }
+		 
+		 enderecoEditing =  dto.getEndereco();
+		 if(!enderecoEditing.equals("")) {
+			 entity.setEndereco(enderecoEditing);
+			 
+		 }
+		 
+		 numeroEditing =  dto.getNumero();
+		 if(!numeroEditing.equals("")) {
+			 entity.setNumero(numeroEditing); 
+		 }
+		 
+		 cidadeEditing =  dto.getCidade();
+		 if(!cidadeEditing.equals("")) {
+			 entity.setCidade(cidadeEditing);	 
+		 }
+		 
+		 estadoEditing =  dto.getEstado();
+		 if(!estadoEditing.equals("")) {
+			 entity.setEstado(estadoEditing);	 
+		 }
+		
+		 entity = repository.save(entity);
+	     return new CompanyDTO(entity);
+		  
 	
+	}catch(EntityNotFoundException e ) {
+		throw new ControllerNotFoundException("Id não Encontrado " + id);
+	}
+		
+	
+	}
+		
+	
+
 	
 }
