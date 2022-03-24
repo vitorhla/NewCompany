@@ -31,5 +31,29 @@ public class CompanyService {
 		Company entity = obj.orElseThrow(()-> new ControllerNotFoundException("Nenhum Registro encontrado"));
 		return new CompanyDTO(entity);
 	}
-
+	
+	
+	@Transactional
+	public CompanyDTO insertNewCompany(CompanyDTO dto) {
+		Company entity = new Company();
+		
+		entity.setCnpj(dto.getCnpj());
+		entity.setNomeFantasia(dto.getNomeFantasia());
+		entity.setRazaoSocial(dto.getRazaoSocial());
+		entity.setEndereco(dto.getEndereco());
+		entity.setNumero(dto.getNumero());
+		entity.setCidade(dto.getCidade());
+		entity.setEstado(dto.getEstado());
+		
+		entity = repository.save(entity);
+		
+		return new  CompanyDTO(entity);
+		
+		
+		
+	}
+	
+	
+	
+	
 }

@@ -1,7 +1,10 @@
-insert into tb_company (cnpj,nome_fantasia,razao_social) values('123','empresa1','Aempresa1');
-insert into tb_company (cnpj,nome_fantasia,razao_social) values('1234','empresa2','Aempresa2');
-insert into tb_company (cnpj,nome_fantasia,razao_social) values('12345','empresa3','Aempresa3');
-insert into tb_company (cnpj,nome_fantasia,razao_social) values('123456','empresa4','Aempresa4');
-insert into tb_company (cnpj,nome_fantasia,razao_social) values('1234567','empresa5','Aempresa5');
-insert into tb_company (cnpj,nome_fantasia,razao_social) values('1234568','empresa6','Aempresa6');
-insert into tb_company (cnpj,nome_fantasia,razao_social) values('1234569','empresa7','Aempresa7');
+insert into tb_company (cnpj,nome_fantasia,razao_social,endereco,numero,cidade,estado) values('12086564000101','NewCompany do Brasil1','NCB1','rua antonio','53','Jaboatao','Pernambuco');
+insert into tb_company (cnpj,nome_fantasia,razao_social,endereco,numero,cidade,estado) values('12086564000102','NewCompany do Brasil2','NCB2','rua antonio','53','Jaboatao','Pernambuco');
+insert into tb_company (cnpj,nome_fantasia,razao_social,endereco,numero,cidade,estado) values('12086564000103','NewCompany do Brasil3','NCB3','rua antonio','53','Jaboatao','Pernambuco');
+insert into tb_company (cnpj,nome_fantasia,razao_social,endereco,numero,cidade,estado) values('12086564000104','NewCompany do Brasil4','NCB4','rua antonio','53','Jaboatao','Pernambuco');
+insert into tb_company (cnpj,nome_fantasia,razao_social,endereco,numero,cidade,estado) values('12086564000105','NewCompany do Brasil5','NCB5','rua antonio','53','Jaboatao','Pernambuco');
+insert into tb_company (cnpj,nome_fantasia,razao_social,endereco,numero,cidade,estado) values('12086564000106','NewCompany do Brasil6','NCB6','rua antonio','53','Jaboatao','Pernambuco');
+insert into tb_company (cnpj,nome_fantasia,razao_social,endereco,numero,cidade,estado) values('12086564000107','NewCompany do Brasil7','NCB7','rua antonio','53','Jaboatao','Pernambuco');
+insert into tb_company (cnpj,nome_fantasia,razao_social,endereco,numero,cidade,estado) values('12086564000108','NewCompany do Brasil8','NCB8','rua antonio','53','Jaboatao','Pernambuco');
+insert into tb_company (cnpj,nome_fantasia,razao_social,endereco,numero,cidade,estado) values('12086564000109','NewCompany do Brasil9','NCB9','rua antonio','53','Jaboatao','Pernambuco');
+insert into tb_company (cnpj,nome_fantasia,razao_social,endereco,numero,cidade,estado) values('12086564000110','NewCompany do Brasil10','NCB10','rua antonio','53','Jaboatao','Pernambuco');
