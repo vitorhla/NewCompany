@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.newcompany.entities.Company;
+import com.newcompany.dto.CompanyDTO;
 import com.newcompany.services.CompanyService;
 
 @RestController
@@ -21,8 +21,8 @@ public class CompanyController {
 	
 	
 	@GetMapping(value = "/listcompany")
-	public ResponseEntity<List<Company>> finAll() {
-		List<Company> list = service.findAll();
+	public ResponseEntity<List<CompanyDTO>> finAll() {
+		List<CompanyDTO> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 
 	}
