@@ -1,12 +1,15 @@
 package com.newcompany.entities;
 
 import java.io.Serializable;
+import java.time.Instant;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
 @Entity
@@ -31,6 +34,12 @@ public class Company  implements Serializable{
 	private String cidade;
 	@Column(columnDefinition = "TEXT")
 	private String estado;
+	
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+	private Instant createdAt;
+	
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+	private Instant updatedAt;
 	
 	public Company() {
 		
@@ -105,32 +114,46 @@ public class Company  implements Serializable{
 		return numero;
 	}
 
-
 	public void setNumero(String numero) {
 		this.numero = numero;
 	}
-
 
 	public String getCidade() {
 		return cidade;
 	}
 
-
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
-
 
 	public String getEstado() {
 		return estado;
 	}
 
-
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
 
+	public Instant getCreatedAt() {
+		return createdAt;
+	}
 
+	public Instant getUpdatedAt() {
+		return updatedAt;
+	}
+
+	@PrePersist
+	public void prePersist() {
+		createdAt = Instant.now();
+	}
+	@PreUpdate
+	public void preUpdate() {
+		updatedAt = Instant.now();
+	}
+	
+	
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
