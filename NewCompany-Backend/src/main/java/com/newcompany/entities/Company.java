@@ -45,7 +45,6 @@ public class Company  implements Serializable{
 		
 	}
 
-
 	public Company(Long id, String razaoSocial, String nomeFantasia, String cnpj, String endereco, String numero,
 			String cidade, String estado) {
 		super();
