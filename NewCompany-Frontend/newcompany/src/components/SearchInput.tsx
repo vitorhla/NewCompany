@@ -1,11 +1,28 @@
 import React from "react";
 import {View, TextInput} from "react-native";
+import { theme } from "../styles";
 
-const SearchInput: React.FC =  () =>{
+interface SearchProps{
+    placeholder: string;
+    search: string;
+    setSearch: Function;
+}
+
+
+
+const SearchInput: React.FC<SearchProps> =  ({
+    search,
+    setSearch,
+    placeholder,
+}) =>{
     return(
 
-<View>
-        <TextInput/>
+<View style ={theme.inputContainer}>
+        <TextInput style={theme.searchInput} 
+        placeholder={placeholder}
+         value = {search} 
+         onChangeText= {text =>setSearch(text)}
+        />
 
 </View>
 

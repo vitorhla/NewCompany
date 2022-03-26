@@ -1,4 +1,4 @@
-import React from "react"
+import React,{useState}from "react";
 import { ScrollView } from "react-native";
 import {theme} from "../styles";
 import {CompanyCard, SearchInput} from '../components'
@@ -55,12 +55,25 @@ const companys = [
 
 
 const Company: React.FC =()=>{
+    const [search,setSearch] = useState("");
+
+const data = 
+    search.length > 0
+        ?   companys.filter(company =>
+                company.name.toLowerCase().includes(search.toLowerCase())
+            ) 
+        :companys;
+
 
     return(
         <ScrollView contentContainerStyle = {theme.scrollContainer}>
 
-            <SearchInput/>
-            {companys.map(companys => (
+            <SearchInput
+             placeholder = "Nome da Empresa" 
+             search
+             setSearch={setSearch}/>
+
+            {data.map(companys => (
                   <CompanyCard { ... companys} />
 
                     
