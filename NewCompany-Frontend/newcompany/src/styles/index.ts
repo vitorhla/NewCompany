@@ -1,5 +1,4 @@
 import {StyleSheet} from 'react-native'
-import { color } from 'react-native-reanimated';
 
 const colors = {
     white:"#FFFFFF",
@@ -12,6 +11,36 @@ const colors = {
     bluePill:"#407BFF61",
     red:"#DF5753",
 };
+
+const text = StyleSheet.create ({
+
+
+  
+
+regular:{
+    fontSize:16,
+    fontWeight:"400",
+    textAlign:"center",
+    color: colors.mediumGray,
+
+},
+bold:{
+    fontSize:26,
+    fontWeight:"bold",
+    textAlign:"center",
+    marginBottom:15,
+   color: colors.darkGray,
+},
+
+primaryText:{
+    fontSize:16,
+    fontWeight:"bold",
+    textTransform: "uppercase",
+    color:colors.white,
+    marginLeft:35,
+},
+
+});
 
 
 const theme = StyleSheet.create({
@@ -34,6 +63,7 @@ const theme = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         alignItems:"center",
+        justifyContent:"space-around",
 
     },
 
@@ -41,13 +71,40 @@ const theme = StyleSheet.create({
         marginTop: 40,
         width:313,
         height: 225,
+    },
+
+    textContainer:{
+        paddingHorizontal:20,
+
+    },
+
+    primaryButton:{
+        width:290,
+        height:50,
+        backgroundColor:colors.primary,
+        borderRadius:10,
+        flexDirection:"row",
+        justifyContent:"space-between",
+        alignItems:"center",
+
+    },
+  
+    arrowContainer:{
+        height:50,
+        width:50,
+        backgroundColor: colors.secondary,
+        borderTopRightRadius: 10,
+        borderBottomRightRadius:10,
+        alignItems:"center",
+        justifyContent: "center",
 
 
-    }
+
+    },
 
 
 
 });
 
 
-export {colors, theme};
+export {colors, theme,text};
