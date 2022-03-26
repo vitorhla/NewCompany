@@ -1,7 +1,7 @@
 import React from "react"
 import { ScrollView } from "react-native";
 import {theme} from "../styles";
-import {CompanyCard} from '../component'
+import {CompanyCard, SearchInput} from '../components'
 
 const companys = [
     {
@@ -58,6 +58,8 @@ const Company: React.FC =()=>{
 
     return(
         <ScrollView contentContainerStyle = {theme.scrollContainer}>
+
+            <SearchInput/>
             {companys.map(companys => (
                   <CompanyCard { ... companys} />
 
