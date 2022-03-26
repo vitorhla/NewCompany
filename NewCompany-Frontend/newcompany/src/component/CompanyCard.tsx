@@ -1,7 +1,7 @@
-import React  from 'react'
-
+import React  from "react";
 import {View, Text,TouchableOpacity} from "react-native";
-import { text, theme } from '../styles';
+import { text, theme } from "../styles";
+
 
 interface CompanyProps{
     id: number;
@@ -9,9 +9,9 @@ interface CompanyProps{
     cnpj: String;
 }
 
-const CardCompany: React.FC <CompanyProps>= ( {id,name,cnpj}) => {
 
-    return(
+const CompanyCard: React.FC <CompanyProps>= ({id,name,cnpj}) => {
+   return(
     <TouchableOpacity  style = {theme.companyCard}>
         <View  style = {theme.companyDescription}> 
             <Text style = {text.companyName}> {name} </Text>
@@ -22,8 +22,7 @@ const CardCompany: React.FC <CompanyProps>= ( {id,name,cnpj}) => {
         </View>
         
     </TouchableOpacity>
-    );
+    )
 };
 
-
-export default CardCompany
+export default CompanyCard;
