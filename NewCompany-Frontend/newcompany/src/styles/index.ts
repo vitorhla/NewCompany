@@ -39,6 +39,18 @@ primaryText:{
     color:colors.white,
     marginLeft:35,
 },
+companyName:{
+    fontSize:16,
+    fontWeight: "bold",
+},
+companycnpj:{
+    fontSize:12,
+    fontWeight: "400",
+    color:colors.mediumGray,
+}
+
+
+
 
 });
 
@@ -50,6 +62,8 @@ const theme = StyleSheet.create({
         alignItems: "center",
         padding:20,
     },
+
+   
     card:{
         width:"100%",
         height:"100%",
@@ -101,8 +115,48 @@ const theme = StyleSheet.create({
 
 
     },
+    scrollContainer:{
+        padding: 10,
+
+    },
 
 
+    companyCard:{
+        width:"100%",
+        backgroundColor: colors.white,
+        borderRadius:10,
+        shadowColor: colors.black,
+        shadowOffset:{
+            width:0,
+            height:2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        alignItems:"center",
+        justifyContent:"space-around",
+        marginVertical:10,
+    },
+
+    companyDescription:{
+        width:"100%",
+        padding:20,
+        borderTopColor:colors.lightGray,
+        /*borderTopWidth: 1,*/
+
+
+        shadowColor: colors.black,
+        shadowOffset:{
+            width:0,
+            height:2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        alignItems:"center",
+        justifyContent:"space-around",
+        marginVertical:10,
+
+
+    }
 
 });
 
