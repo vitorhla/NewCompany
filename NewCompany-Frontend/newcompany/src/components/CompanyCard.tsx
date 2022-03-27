@@ -15,7 +15,7 @@ interface CompanyProps{
 }
 
 
-const CompanyCard: React.FC <CompanyProps>= ({id,razaoSocial,nomeFantasia,cnpj,endereco,numero,cidade}) => {
+const CompanyCard: React.FC <CompanyProps>= ({id,razaoSocial,nomeFantasia,cnpj,endereco,numero,cidade,estado}) => {
    return(
     <TouchableOpacity  style = {theme.companyCard}>
         <View  style = {theme.companyDescription}> 

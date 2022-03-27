@@ -4,9 +4,6 @@ import {theme} from "../styles";
 import {CompanyCard, SearchInput} from '../components'
 import { api } from "../services";
 
-
-
-
 const Company: React.FC =()=>{
     const [search,setSearch] = useState("");
     const [companys, setCompanys] = useState([]);
@@ -14,13 +11,9 @@ const Company: React.FC =()=>{
 
     async function fillCompanys(){
         setLoading(true)
-        const res = await api.get(
-            `/company?page=0&linesPerPage=12&direction=ASC&orderBy=razaoSocial`
-        );
-
+        const res = await api.get(`/company?page=0&linesPerPage=12&direction=ASC&orderBy=razaoSocial`);
+        console.warn(res);
         setCompanys(res.data.content);
-
-
         setLoading(false);
     }
 
@@ -28,10 +21,12 @@ const Company: React.FC =()=>{
         fillCompanys();
     },[]);
 
+
+
     const data = 
         search.length > 0
         ?   companys.filter((company) =>
-                company.nomeFantasia.toLowerCase().includes(search.toLowerCase())
+                companys.razaoSocial.toLowerCase().includes(search.toLowerCase())
             ) 
         : companys;
 
@@ -41,12 +36,12 @@ const Company: React.FC =()=>{
 
             <SearchInput placeholder = "Nome da Empresa" search={search} /*falta so esse*/ setSearch={setSearch}/>
             
-            {  loading?( <ActivityIndicator size= "large"/>):
+            {  loading ?( 
+                 <ActivityIndicator size= "large"/>
+                 ):
             
-            data.map(companys => (
-                  <CompanyCard { ... companys} key={company.id}/>)
-                  
-                  )}
+            (data.map( (company) => (
+                  <CompanyCard { ... company} key={company.id}/>)))}
            
         </ScrollView>
 
