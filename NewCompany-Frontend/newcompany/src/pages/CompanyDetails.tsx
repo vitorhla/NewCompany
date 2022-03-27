@@ -1,10 +1,11 @@
 import React, { useState,useEffect } from "react";
+
+import logoCompany from "../assets/logocompany.png";
 import { View,Text,ActivityIndicator,Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import {api} from "../services";
 import {theme, text} from "../styles";
 
-import logoCompany from '../assets/logoCompany.png';
 import { useNavigation } from "@react-navigation/native";
 
 const CompanyDetails = (

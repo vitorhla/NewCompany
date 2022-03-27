@@ -4,7 +4,7 @@ import { text, theme } from "../styles";
 
 import {useNavigation} from "@react-navigation/native";
 import { CompanyDetails } from "../pages";
-import logoCompany from '../assets/logoCompany.png';
+import logoCompany from "../assets/logocompany.png";
 
 interface CompanyProps{
     id: Number,
