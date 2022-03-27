@@ -12,7 +12,6 @@ const Company: React.FC =()=>{
     async function fillCompanys(){
         setLoading(true)
         const res = await api.get(`/company?page=0&linesPerPage=12&direction=ASC&orderBy=razaoSocial`);
-        console.warn(res);
         setCompanys(res.data.content);
         setLoading(false);
     }
@@ -25,7 +24,7 @@ const Company: React.FC =()=>{
 
     const data = 
         search.length > 0
-        ?   companys.filter((company) =>
+        ?   companys.filter((companys) =>
                 companys.razaoSocial.toLowerCase().includes(search.toLowerCase())
             ) 
         : companys;
@@ -40,8 +39,9 @@ const Company: React.FC =()=>{
                  <ActivityIndicator size= "large"/>
                  ):
             
-            (data.map( (company) => (
-                  <CompanyCard { ... company} key={company.id}/>)))}
+            (data.map( (companys) => (
+                  <CompanyCard { ... companys} key={companys.id}/>
+                  )))}
            
         </ScrollView>
 

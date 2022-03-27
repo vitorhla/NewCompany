@@ -1,25 +1,32 @@
 import React  from "react";
-import {View, Text,TouchableOpacity} from "react-native";
+import {View, Text,TouchableOpacity,Image} from "react-native";
 import { text, theme } from "../styles";
 
+import {useNavigation} from "@react-navigation/native";
+import { CompanyDetails } from "../pages";
+import logoCompany from '../assets/logoCompany.png';
 
 interface CompanyProps{
-    id: number,
-    razaoSocial: string,
-    nomeFantasia: string,
-    cnpj: string,
-    endereco: string,
-    numero: string,
-    cidade: string,
-    estado:string,
+    id: Number,
+    razaoSocial: String,
+    nomeFantasia: String,
+    cnpj: String,
+    endereco: String,
+    numero: String,
+    cidade: String,
+    estado: String,
 }
 
 
 const CompanyCard: React.FC <CompanyProps>= ({id,razaoSocial,nomeFantasia,cnpj,endereco,numero,cidade,estado}) => {
+    const navigation = useNavigation();
    return(
-    <TouchableOpacity  style = {theme.companyCard}>
+    <TouchableOpacity  style = {theme.companyCard} onPress={() => navigation.navigate("CompanyDetails"as never,{id} as never)}>
+          <View style = {theme.companyImageContainer}>
+                            <Image source={logoCompany} style={theme.mhome} />
+                        </View>
         <View  style = {theme.companyDescription}> 
-
+        
             <Text style = {text.companyName}> {razaoSocial} </Text>
 
             <View>

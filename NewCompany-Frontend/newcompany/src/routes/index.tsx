@@ -1,9 +1,9 @@
-import React from 'react'
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
 
-import {Home, Company} from '../pages'
+import {Home, Company, CompanyDetails} from "../pages";
 
 
 
@@ -11,11 +11,15 @@ import {Home, Company} from '../pages'
 const  Routes: React.FC = ()=>{
 
     return(
-        <Stack.Navigator>
+        <Stack.Navigator
+        screenOptions={{
+            headerTitle: "",
+        }}
+        >
         
         <Stack.Screen name = "Home" component={Home}/>
         <Stack.Screen name = "Company" component={Company}/>
-
+        <Stack.Screen name = "CompanyDetails" component={CompanyDetails}/>
         
         </Stack.Navigator>
 

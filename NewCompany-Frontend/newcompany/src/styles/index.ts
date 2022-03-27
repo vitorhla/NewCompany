@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native'
+import { color } from 'react-native-reanimated';
 
 const colors = {
     white:"#FFFFFF",
@@ -15,11 +16,10 @@ const colors = {
 
 };
 
+
+
+
 const text = StyleSheet.create ({
-
-
-  
-
 regular:{
     fontSize:16,
     fontWeight:"400",
@@ -50,12 +50,23 @@ companycnpj:{
     fontSize:12,
     fontWeight: "400",
     color:colors.mediumGray,
-}
-
-
-
+},
+goBackText:{
+    fontSize:18,
+    fontWeight: "bold",
+    textTransform:"uppercase",
+    color: colors.darkGray,
+    marginLeft: 16,
+},
+companySocial:{
+    fontWeight: "bold",
+},
+companyFantasia:{
+    fontWeight: "bold",
+},
 
 });
+
 
 
 const theme = StyleSheet.create({
@@ -186,9 +197,43 @@ const theme = StyleSheet.create({
 
     },
 
+    detailContainer:{
+        backgroundColor: colors.white,
+        padding:20,
+    },
+    detailCard:{
+        width:"100%",
+        height:"100%",
+        backgroundColor: colors.white,
+        borderRadius:20,
+        shadowColor: colors.black,
+        shadowOffset:{
+            width:0,
+            height:2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        justifyContent:"space-around",
+        padding:20,
+    },
+    companyImageContainer:{
+        width:"100%",
+        borderWidth: 1,
+        borderColor:colors.lightGray,
+        alignItems:"center",
+        borderRadius:20,
 
+    
+    },
+    goBackList:{
+        width:20,
+        flexDirection: "row",
+        justifyContent:"flex-start",
+        marginVertical:10,
+        alignItems:"center",
+    },
 
-
+  
 
 
 });
