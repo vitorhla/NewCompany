@@ -34,7 +34,7 @@ const FormCompany: React.FC<FormProductProps> = (props)=>{
     });
 
         function handleSave(){
-           
+            setLoading(true);
             const data = {
                 ... company
             };
@@ -46,7 +46,7 @@ const FormCompany: React.FC<FormProductProps> = (props)=>{
             }catch(res){
                 console.warn('erro ao salvar');
             }
-
+            setLoading(false);
         };
 
      
