@@ -2,7 +2,7 @@ import {StyleSheet,Dimensions} from 'react-native'
 import { color } from 'react-native-reanimated';
 
 const deviceWidth =  Dimensions.get('window').width;
-
+const deviceHeight =  Dimensions.get('window').height;
 
 const colors = {
     white:"#FFFFFF",
@@ -67,6 +67,16 @@ companySocial:{
 companyFantasia:{
     fontWeight: "bold",
 },
+saveform:{
+    textTransform:"uppercase",
+    fontWeight:"bold",
+    color:colors.white,
+},
+cancelform:{
+    textTransform:"uppercase",
+    fontWeight:"bold",
+    color:colors.red,
+}
 
 });
 
@@ -281,8 +291,89 @@ const theme = StyleSheet.create({
         alignItems:"center",
     },
 
+    formContainer:{
+        width:deviceHeight,
+        padding:20,
+    },
   
+    formCard0:{
 
+        alignItems:"flex-start"
+    },
+
+    formCard1:{
+        width:"100%",
+        height: "100%",
+        backgroundColor:colors.white,
+        borderRadius:20,
+        padding:20,
+        shadowColor:colors.black,
+        shadowOffset:{
+            width:0,
+            height:2,
+        },
+        shadowOpacity:0.25,
+        shadowRadius:3.84,
+    
+        justifyContent:"space-between",
+    },
+
+    formCard2:{
+        width:"100%",
+        height: "100%",
+        backgroundColor:colors.white,
+        borderRadius:20,
+        padding:20,
+        alignItems:"flex-start",
+        justifyContent:"space-between",
+    },
+   formInput:{
+    width:290,
+    height:50,
+    borderWidth:1,
+    borderColor:colors.mediumGray,
+    borderRadius:10,
+    padding:10,
+    marginVertical: 15,
+
+   },
+   goBackTextform:{
+    borderColor:colors.mediumGray,
+   },
+   butonform:{
+    justifyContent:"space-between",
+    flexDirection: "row",
+    paddingRight: 50,
+   },
+   saveform:{
+    width:"40%",
+    height:40,
+    borderWidth:1,
+    backgroundColor:colors.primary,
+    marginVertical:10,
+    alignItems:"center",
+    justifyContent:"center",
+    borderRadius:10,
+        paddingLeft: 50,
+        paddingRight: 50,
+        
+   },
+   cancelform:{
+       width:"40%",
+       height:40,
+       borderWidth:1,
+       borderColor:colors.red,
+       marginVertical:10,
+       alignItems:"center",
+       justifyContent:"center",
+       borderRadius:10,
+
+
+       
+    paddingLeft: 50,
+    paddingRight: 50,
+    
+   }
 
 });
 
